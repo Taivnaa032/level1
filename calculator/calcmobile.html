@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="calcmoble.css" />
+  </head>
+  <body >
+    <div class="border">
+      <div id="result">
+        <div id="xxo"></div>
+      </div>
+      <div id="numbers">
+        <div class="row-1">
+          <div class="light" onclick="ac()">AC</div>
+          <div class="light" onclick="temp()">+/-</div>
+          <div class="light" onclick="percent()">%</div>
+          <div class="orangee light" onclick="hariu('/')">÷</div>
+        </div>
+        <div class="row-2">
+          <div class="dark" onclick="too(7)">7</div>
+          <div class="dark" onclick="too(8)">8</div>
+          <div class="dark" onclick="too(9)">9</div>
+          <div class="orangee" onclick="hariu('*')">x</div>
+        </div>
+        <div class="row-1">
+          <div class="dark" onclick="too(4)">4</div>
+          <div class="dark" onclick="too(5)">5</div>
+          <div class="dark" onclick="too(6)">6</div>
+          <div class="orangee" onclick="hariu('-')">-</div>
+        </div>
+        <div class="row-4">
+          <div class="dark" onclick="too(1)">1</div>
+          <div class="dark" onclick="too(2)">2</div>
+          <div class="dark" onclick="too(3)">3</div>
+          <div class="orangee" onclick="hariu('+')">+</div>
+        </div>
+      </div>
+      <div class="row-5">
+        <div id="zero" onclick="too(0)">0</div>
+        <div class="dark" onclick="dot()">.</div>
+        <div class="orangee" onclick="equals()">=</div>
+      </div>
+    </div>
+    <script>
+      let iner = document.getElementById('xxo');
+      let save = "";
+      let symbol1;
+      function too(number){
+        document.getElementById('xxo').innerHTML += number;
+      }
+      function hariu (symbol) {
+       save = iner.innerHTML;
+        symbol1 = symbol;
+        ac();
+      }                                                    
+      function ac(){
+        document.getElementById('xxo').innerHTML = "";
+      }
+      const equals = () => {
+        switch (symbol1) {
+          case "/":
+            iner.innerHTML = Number(save) / Number(iner.innerHTML);
+            break;
+            case "*":
+            iner.innerHTML = Number(save) * Number(iner.innerHTML);
+            break;
+            case "+":
+            iner.innerHTML = Number(save) + Number(iner.innerHTML);
+            break;
+            case "-":
+            iner.innerHTML = Number(save) - Number(iner.innerHTML);
+            break;
+        }
+      }
+       
+      const dot = () => {
+        if(!iner.innerHTML.includes(".")){
+          iner.innerHTML += ".";
+        }
+      }
+
+      const temp = () => {
+        iner.innerHTML *= -1;
+      }
+      
+      const percent = () => {
+        iner.innerHTML *= 1/100;
+      }
+    </script>
+  </body>
+ 
+</html>

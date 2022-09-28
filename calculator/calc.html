@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="margin: 0" onkeyup="clickee()">
+    <div
+      style="
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        height: 100vh;
+        width: 100%;
+      "
+    >
+      <div style="display: flex">
+        <div><input  class="num" style="width: 200px; height: 20px" /></div>
+        <div>*</div>
+        <div ><input class="num1" style="width: 200px; height: 20px" /></div>
+        <div  style="display: flex">
+          <div>=</div>
+          <div style="font-size: 30px" class="result"></div> 
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const clickee = () => {
+      if(event.key == "s"){
+
+        document.getElementsByClassName("result")[0].innerHTML = 
+        parseInt(document.getElementsByClassName("num")[0].value) *
+        parseInt(document.getElementsByClassName("num1")[0].value)
+      }
+    }
+  </script>
+</html>

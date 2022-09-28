@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="margin: 0;" onkeypress="touch()">
+  <div style="display:flex; justify-content: center;">
+    <div style="width: 900px; height: 100vh; background-color: red ;" id="red" onclick="clickRed()"></div>
+    <div style="width: 900px; height: 100vh; background-color: blue ;" id="blue" onclick="clickBlue()"></div>
+  </div>
+</body>
+<script>
+  const clickRed = () =>{
+    document.getElementById('red').style.width = parseInt(document.getElementById('red').style.width)+ 10000 + 'px';
+  } 
+  const clickBlue = () =>{
+    document.getElementById('blue').style.width = parseInt(document.getElementById('blue').style.width)+ 10000 + 'px';
+  }
+  const touch = () => {
+    if(event.key == "r") clickRed()
+    if(event.key == "l") clickBlue()
+  }
+</script>
+</html>
